@@ -9320,6 +9320,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"backend@workspace:apps/backend/.medusa/server":
+  version: 0.0.0-use.local
+  resolution: "backend@workspace:apps/backend/.medusa/server"
+  dependencies:
+    "@eslint/js": ^9.15.0
+    "@medusajs/admin-sdk": ^2.5.0
+    "@medusajs/cli": ^2.5.0
+    "@medusajs/framework": ^2.5.0
+    "@medusajs/medusa": ^2.5.0
+    "@medusajs/medusa-oas-cli": ^2.5.0
+    "@medusajs/test-utils": ^2.5.0
+    "@mercurjs/http-client": "*"
+    "@mikro-orm/cli": 6.4.3
+    "@mikro-orm/core": 6.4.3
+    "@mikro-orm/knex": 6.4.3
+    "@mikro-orm/migrations": 6.4.3
+    "@mikro-orm/postgresql": 6.4.3
+    "@swc/core": 1.5.7
+    "@swc/jest": ^0.2.36
+    "@trivago/prettier-plugin-sort-imports": ^4.3.0
+    "@types/jest": ^29.5.13
+    "@types/node": ^20.0.0
+    "@types/react": ^18.3.2
+    "@types/react-dom": ^18.2.25
+    awilix: ^8.0.1
+    eslint: ^9.15.0
+    globals: ^15.12.0
+    jest: ^29.7.0
+    pg: ^8.13.0
+    prettier: ^3.3.3
+    prop-types: ^15.8.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    resend: ^4.1.2
+    stripe: ^17.4.0
+    ts-node: ^10.9.2
+    typescript: ^5.6.2
+    typescript-eslint: ^8.15.0
+    vite: ^6.0.11
+  languageName: unknown
+  linkType: soft
+
 "balanced-match@npm:^1.0.0":
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"

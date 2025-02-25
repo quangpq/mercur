@@ -105,6 +105,12 @@ yarn dev
 
 &nbsp;
 
+## Docker image
+```bash
+docker build -t sqoonyv3/mercur .
+docker push sqoonyv3/mercur
+```
+
 ## Prerequisites
 
 - Node.js v20+

@@ -1,0 +1,18 @@
+**/.DS_Store
+
+# ignore .git and .cache folders
+.git
+**/.cache
+**/__pycache__
+
+**/.idea
+**/*.pot
+**/.vscode
+
+.eslintcache
+node_modules
+**/node_modules
+**/dist
+**/.medusa
+**/.turbo
+**/.env

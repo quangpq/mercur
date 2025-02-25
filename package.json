@@ -6,7 +6,8 @@
   "packageManager": "yarn@3.8.7",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "apps/backend/.medusa/server"
   ],
   "scripts": {
     "postinstall": "npx patch-package",
