@@ -24,6 +24,9 @@ export const updateCommissionRuleStep = createStep(
     const service =
       container.resolve<CommissionModuleService>(COMMISSION_MODULE)
 
-    await service.updateCommissionRules(previousData)
+    await service.updateCommissionRules({
+      ...previousData,
+      rate: undefined
+    })
   }
 )

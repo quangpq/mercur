@@ -11,7 +11,9 @@ export const createCommissionLinesStep = createStep(
       COMMISSION_MODULE
     ) as CommissionModuleService
 
-    const result = await service.createCommissionLines(input)
+    const result = await service.createCommissionLines(
+      input.map((i) => ({ ...i, value: Number(i.value) }))
+    )
 
     return new StepResponse(result)
   }

@@ -1,4 +1,9 @@
-import { MemberDTO, MemberInviteDTO, SellerDTO } from './common'
+import {
+  MemberDTO,
+  MemberInviteDTO,
+  SellerDTO,
+  SellerUpdateDTO
+} from './common'
 
 export interface CreateSellerDTO
   extends Omit<
@@ -8,16 +13,19 @@ export interface CreateSellerDTO
   name: string
 }
 
-export interface UpdateSellerDTO extends Partial<SellerDTO> {
+export interface UpdateSellerDTO extends Partial<SellerUpdateDTO> {
   id: string
 }
 
 export interface CreateMemberDTO
-  extends Omit<Partial<MemberDTO>, 'id' | 'created_at' | 'updated_at'> {
+  extends Omit<
+    Partial<MemberDTO>,
+    'id' | 'created_at' | 'updated_at' | 'seller'
+  > {
   seller_id: string
 }
 
-export interface UpdateMemberDTO extends Partial<MemberDTO> {
+export interface UpdateMemberDTO extends Partial<Omit<MemberDTO, 'seller'>> {
   id: string
 }
 

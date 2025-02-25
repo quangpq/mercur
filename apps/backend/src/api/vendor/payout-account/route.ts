@@ -46,7 +46,7 @@ export const GET = async (
   } = await query.graph(
     {
       entity: sellerPayoutAccountLink.entryPoint,
-      fields: req.remoteQueryConfig.fields.map(
+      fields: req.queryConfig.fields.map(
         (field) => `payout_account.${field}`
       ),
       filters: req.filterableFields
@@ -109,7 +109,7 @@ export const POST = async (
   } = await query.graph(
     {
       entity: 'payout_account',
-      fields: req.remoteQueryConfig.fields,
+      fields: req.queryConfig.fields,
       filters: {
         id: result.id
       }

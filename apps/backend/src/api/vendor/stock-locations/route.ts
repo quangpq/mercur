@@ -46,7 +46,7 @@ export const POST = async (
   res: MedusaResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
-  const remoteLink = req.scope.resolve(ContainerRegistrationKeys.REMOTE_LINK)
+  const remoteLink = req.scope.resolve(ContainerRegistrationKeys.LINK)
   const seller = await fetchSellerByAuthActorId(
     req.auth_context.actor_id,
     req.scope
@@ -69,7 +69,7 @@ export const POST = async (
     data: [stockLocation]
   } = await query.graph({
     entity: 'stock_location',
-    fields: req.remoteQueryConfig.fields,
+    fields: req.queryConfig.fields,
     filters: {
       id: result[0].id
     }
@@ -118,7 +118,7 @@ export const GET = async (
 
   const { data: sellerLocations } = await query.graph({
     entity: sellerStockLocationLink.entryPoint,
-    fields: req.remoteQueryConfig.fields.map(
+    fields: req.queryConfig.fields.map(
       (field) => `stock_location.${field}`
     ),
     filters: req.filterableFields

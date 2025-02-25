@@ -14,7 +14,14 @@ export const createOrderReturnRequestStep = createStep(
       container.resolve<OrderReturnModuleService>(ORDER_RETURN_MODULE)
 
     const request: OrderReturnRequestDTO =
-      await service.createOrderReturnRequests(input)
+      await service.createOrderReturnRequests({
+        ...input,
+        line_items: undefined
+      })
+
+    await service.createOrderReturnRequestLineItems(
+      input.line_items.map((i) => ({ ...i, return_request: request.id }))
+    )
 
     return new StepResponse(request, request.id)
   }

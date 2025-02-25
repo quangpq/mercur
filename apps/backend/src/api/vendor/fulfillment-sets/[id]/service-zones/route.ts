@@ -46,7 +46,7 @@ export const POST = async (
   res: MedusaResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
-  const remoteLink = req.scope.resolve(ContainerRegistrationKeys.REMOTE_LINK)
+  const remoteLink = req.scope.resolve(ContainerRegistrationKeys.LINK)
 
   const seller = await fetchSellerByAuthActorId(
     req.auth_context.actor_id,
@@ -75,7 +75,7 @@ export const POST = async (
   } = await query.graph(
     {
       entity: 'fulfillment_set',
-      fields: req.remoteQueryConfig.fields,
+      fields: req.queryConfig.fields,
       filters: {
         id: req.params.id
       }

@@ -96,11 +96,13 @@ class SellerModuleService extends MedusaService({
     const toUpdate = Array.isArray(created) ? created : [created]
 
     const updates = toUpdate.map((invite) => {
+      const expires_at = new Date()
+      expires_at.setMilliseconds(
+        new Date().getMilliseconds() + DEFAULT_VALID_INVITE_DURATION
+      )
       return {
         id: invite.id,
-        expires_at: new Date().setMilliseconds(
-          new Date().getMilliseconds() + DEFAULT_VALID_INVITE_DURATION
-        ),
+        expires_at: expires_at,
         token: this.generateToken({ id: invite.id })
       }
     })

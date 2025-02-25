@@ -1,5 +1,6 @@
 import { MedusaResponse } from '@medusajs/framework'
 import { AuthenticatedMedusaRequest } from '@medusajs/framework'
+import { UpdateStockLocationInput } from '@medusajs/framework/types'
 import { ContainerRegistrationKeys } from '@medusajs/framework/utils'
 import {
   deleteStockLocationsWorkflow,
@@ -51,7 +52,7 @@ export const GET = async (
   } = await query.graph(
     {
       entity: 'stock_location',
-      fields: req.remoteQueryConfig.fields,
+      fields: req.queryConfig.fields,
       filters: {
         id: req.params.id
       }
@@ -104,7 +105,7 @@ export const GET = async (
  *   - cookie_auth: []
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
+  req: AuthenticatedMedusaRequest<UpdateStockLocationInput>,
   res: MedusaResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
@@ -123,7 +124,7 @@ export const POST = async (
   } = await query.graph(
     {
       entity: 'stock_location',
-      fields: req.remoteQueryConfig.fields,
+      fields: req.queryConfig.fields,
       filters: {
         id: req.params.id
       }

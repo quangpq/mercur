@@ -26,7 +26,7 @@ const getVariantInventoryItemIds = async (
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products, additional_data }, { container }) => {
-    const remoteLink = container.resolve(ContainerRegistrationKeys.REMOTE_LINK)
+    const remoteLink = container.resolve(ContainerRegistrationKeys.LINK)
 
     if (!additional_data?.seller_id) {
       return new StepResponse(undefined, null)
@@ -75,7 +75,7 @@ createProductsWorkflow.hooks.productsCreated(
       return
     }
 
-    const remoteLink = container.resolve(ContainerRegistrationKeys.REMOTE_LINK)
+    const remoteLink = container.resolve(ContainerRegistrationKeys.LINK)
 
     await remoteLink.dismiss(
       productIds.map((productId) => ({

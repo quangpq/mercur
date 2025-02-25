@@ -34,7 +34,7 @@ export const GET = async (
   const seller = await fetchSellerByAuthActorId(
     req.auth_context.actor_id,
     req.scope,
-    req.remoteQueryConfig.fields
+    req.queryConfig.fields
   )
 
   res.json({ seller })
@@ -86,7 +86,7 @@ export const POST = async (
   } = await query.graph(
     {
       entity: 'seller',
-      fields: req.remoteQueryConfig.fields,
+      fields: req.queryConfig.fields,
       filters: { id }
     },
     { throwIfKeyNotFound: true }

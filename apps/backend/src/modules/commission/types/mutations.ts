@@ -31,6 +31,9 @@ export type UpdateCommissionRateDTO = Partial<CreateCommissionRateDTO> & {
   id: string
 }
 
-export type UpdateCommissionRuleDTO = Partial<CreateCommissionRuleDTO> & {
+export type UpdateCommissionRuleDTO = Partial<
+  Omit<CreateCommissionRuleDTO, 'rate'>
+> & {
   id: string
+  rate?: string
 }

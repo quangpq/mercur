@@ -14,7 +14,7 @@ export const createPayoutStep = createStep(
 
     try {
       payout = await service.createPayout(input)
-    } catch (_error) {
+    } catch {
       err = true
     }
 

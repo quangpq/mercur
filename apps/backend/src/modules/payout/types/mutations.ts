@@ -1,5 +1,3 @@
-import { BigNumberInput } from '@medusajs/framework/types'
-
 import { OnboardingDTO, PayoutAccountDTO } from './common'
 
 export interface CreatePayoutAccountDTO {
@@ -21,7 +19,7 @@ export interface CreateOnboardingDTO
 }
 
 export type CreatePayoutDTO = {
-  amount: BigNumberInput
+  amount: number
   currency_code: string
   account_id: string
   transaction_id: string

@@ -82,7 +82,10 @@ DATABASE_URL=postgres://[user]:[password]@[address]:[port]/$DB_NAME
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/$DB_NAME
 
 # Setup database and run migrations
-yarn medusa db:create && yarn medusa db:migrate && yarn run seed
+yarn medusa db:create --db mercur && yarn medusa db:migrate
+
+# Seed data
+yarn run seed
 
 # Generate OpenAPI client
 yarn generate:oas

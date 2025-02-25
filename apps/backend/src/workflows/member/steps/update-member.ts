@@ -19,6 +19,9 @@ export const updateMemberStep = createStep(
   async (previousData: MemberDTO, { container }) => {
     const service = container.resolve<SellerModuleService>(SELLER_MODULE)
 
-    await service.updateMembers(previousData)
+    await service.updateMembers({
+      ...previousData,
+      seller: undefined
+    })
   }
 )
